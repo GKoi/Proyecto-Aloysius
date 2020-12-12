@@ -1,0 +1,32 @@
+<%- include('_header'); -%>
+
+<link rel="stylesheet" type="text/css" href="/css/signin.css">
+<body class="text-center"></body>
+ 
+    <div class="row h-100 m-0">
+
+      <div class="col login">
+       
+        <form class="form-signin" method="POST" action="/">
+
+          <h1 class="h1 mb-3 font-weight-normal">Inicio de Sesión</h1>
+          <label for="inputEmail" class="sr-only">Usuario</label>
+          <br>
+          <input style="color:black"type="email" id="usr" name="usr" class="form-control" placeholder="Usuario" required autofocus>
+          <label for="inputPassword" class="sr-only">Contraseña</label>
+          <br> 
+          <input type="password" id="pwd" name="pwd" class="form-control" placeholder="Contraseña" required>
+          <div class="row mb-3">
+              <br><br>
+          </div>
+         
+          <button onClick="location.href ='/'" class="shadow btn btn-lg btn-block text-white" type="submit" style="background-color:black; color:white">Iniciar Sesión</button>
+          <button onclick="location.href = '/'" class="shadow btn btn-lg btn-block btn-light text-azul" style="background-color: white;color:black" type="button" >Cambiar Contraseña</button>
+        </form>
+      </div>
+    </div>
+  </body>
+  
+
+<%- include ('_footer'); -%>
+

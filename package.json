@@ -1,0 +1,24 @@
+{
+  "name": "proyecto_aloysius",
+  "version": "0.0.1",
+  "description": "proyecto AP",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GKoi/Proyecto-Aloysius.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/GKoi/Proyecto-Aloysius/issues"
+  },
+  "homepage": "https://github.com/GKoi/Proyecto-Aloysius#readme",
+  "dependencies": {
+    "ejs": "^3.1.5",
+    "express": "^4.17.1"
+  }
+}
