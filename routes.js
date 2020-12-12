@@ -16,4 +16,10 @@ router.get("/contactos",function(req,res){
     console.log("Entra a contactos");
     res.render("contactos");
 });
+
+router.get("/mainUsuario",function(req,res){
+    console.log("Entra a main usuario");
+    res.render("mainUsuario");
+});
+
 module.exports = router;
