@@ -1,5 +1,6 @@
 function addRecordatorio(){
 	var table = document.getElementById("usertable");
+	document.getElementById("guardarR").style.visibility = "visible";
 	if(table.rows.length!=0)
 	var lastRow = parseInt(table.rows[ table.rows.length - 1 ].cells[0].innerHTML) + 1;
 	else
@@ -16,5 +17,4 @@ function addRecordatorio(){
 	cell2.innerHTML = '<input type="text" class="form-control hideinput" name="name-'+lastRow+'" value="Descripcion">';
 	cell3.innerHTML = '<input type="text" class="form-control hideinput" name="user-'+lastRow+'" value="dd/mm/yyyy">';
 	cell4.innerHTML = '<button class="btn btn-icon" onclick="deleteUser(this,'+lastRow+');"><i class="fas fa-trash text-danger"></i></button>';
-	document.getElementById("guardarR").style.visibility = "visible";
 };

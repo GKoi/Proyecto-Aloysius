@@ -32,4 +32,9 @@ router.get("/recordatorios",function(req,res){
     res.render("recordatorios");
 });
 
+router.get("/crearRecordatorio",function(req,res){
+    console.log("Entra a crear recordatorios");
+    res.render("crearRecordatorio");
+});
+
 module.exports = router;
