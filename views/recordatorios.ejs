@@ -1,0 +1,45 @@
+<%- include('_headerUsuario'); -%>
+<body>
+    <div class="d-flex" id="wrapper">
+        <div id="page-content-wrapper" style="background-color: #FAFAFA;">
+            <button class="btn" id="menu-toggle" style="background: none;"><i class="fas fa-bars"></i></button>
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-12 col-md">
+                        <p class="title mt-3 pb-2 font-weight-bold h1">Recordatorios</p>
+                    </div>
+                    <div class="col-auto d-flex align-items-center">
+                        <form action="/usuario" id="usersub">
+                            <button type="button" onclick="addRecordatorio();" class="btn btn-info" style="color:white; background-color:black; border-color: black;">Crear Recordatorio</button>                      </button>
+                            <button type="button" class="btn btn-info" style="color:white; background-color:black; border-color: black; visibility: hidden;" id="guardarR">Guardar</button>
+                            <p style="color: black;" id="error"></p>
+                        </form>
+
+                    </div>
+                </div>
+                <div class="bg-white shadow p-3 mb-5">
+                    <div class="table-responsive">
+                        <table class="table table-striped table-borderless">
+                            <thead>
+                                <tr>
+                                    <th scope="col">ID</th>
+                                    <th scope="col">Descripción</th>
+                                    <th scope="col">Fecha</th>
+                                    <th scope="col" class="text-center">Eliminar</th>
+                                </tr>
+                            </thead>
+                            <tbody id="usertable">
+                                <tr>
+                                                              
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<%- include ('_footer'); -%>
+
+<script src="scripts/crud.js"></script>

@@ -22,4 +22,14 @@ router.get("/mainUsuario",function(req,res){
     res.render("mainUsuario");
 });
 
+router.get("/agendarCita",function(req,res){
+    console.log("Entra a agendar cita");
+    res.render("agendarCita");
+});
+
+router.get("/recordatorios",function(req,res){
+    console.log("Entra a recordatorios");
+    res.render("recordatorios");
+});
+
 module.exports = router;

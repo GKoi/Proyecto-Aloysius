@@ -1,0 +1,46 @@
+<%- include('_headerUsuario'); -%>
+<body>
+
+    <div class="d-flex" id="wrapper">
+        <div id="page-content-wrapper" style="background-color: #FAFAFA;">
+            <button class="btn" id="menu-toggle" style="background: none;"><i class="fas fa-bars"></i></button>
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-12 col-md">
+                        <p class="title mt-3 pb-2 font-weight-bold h1">Doctores disponibles</p>
+                    </div>
+                </div>
+                <div class="bg-white shadow p-3 mb-5">
+                    <div class="form-row">
+                        <div class="form-group col-12 col-md">
+                            <label> Área </label>
+                            <select class="form-control" id="area">
+                                <option value="0">Sin filtro</option>
+                            </select>
+                        </div>
+                        <div class="form-group col-12 col-md">
+                            <label> Doctor </label>
+                            <select class="form-control" id="doctor">
+                                <option value="0">Sin filtro</option>
+                            </select>
+                        </div>
+                    </div>                 
+                   <div class="table-responsive">
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th scope="col">Área</th>
+                                <th scope="col">Doctores</th>
+                                <th scope="col">Agendar</th>
+                            </tr>
+                            </tr>
+                        </thead>
+                        <tbody id="componenttable">
+                        </tbody>
+                    </table>
+                </div></div>
+            </div>
+        </div>
+    </div>
+</body>
+<%- include ('_footer'); -%>
