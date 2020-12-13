@@ -32,4 +32,9 @@ router.get("/recordatorios",function(req,res){
     res.render("recordatorios");
 });
 
+router.get("/localizacion",function(req,res){
+    console.log("Entra a localizacion");
+    res.render("localizacion");
+});
+
 module.exports = router;
