@@ -32,15 +32,14 @@ router.get("/recordatorios",function(req,res){
     res.render("recordatorios");
 });
 
-<<<<<<< HEAD
 router.get("/crearRecordatorio",function(req,res){
     console.log("Entra a crear recordatorios");
     res.render("crearRecordatorio");
-=======
+});
+
 router.get("/localizacion",function(req,res){
     console.log("Entra a localizacion");
     res.render("localizacion");
->>>>>>> 1d8c5a5dc980db2de327cc3614d7c80feacb1ff1
 });
 
 module.exports = router;
