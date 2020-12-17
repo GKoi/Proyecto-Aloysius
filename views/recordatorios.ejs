@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html>
 
 <head>
@@ -35,7 +36,6 @@
                             </thead>
                             <tbody id="usertable">
                                 <tr>
-                                                              
                                 </tr>
                             </tbody>
                         </table>
@@ -44,7 +44,31 @@
             </div>
         </div>
     </div>
+  <script>
+	var table = document.getElementById("usertable");
+	var count = 0;
+	var leadsRef = db.ref('recordatorios');
+	leadsRef.on('value', function(snapshot) {
+    snapshot.forEach(function(childSnapshot) {
+      var childData = childSnapshot.val();
 
+	  if(localStorage["cedPaciente"]==childData.cedulaPaciente){
+		count++;
+		var row = table.insertRow(count);
+		var cell1 = row.insertCell(0);
+		var cell2 = row.insertCell(1);
+		var cell3 = row.insertCell(2);
+			
+		cell1.innerHTML	=	childData.cedulaPaciente;
+		cell2.innerHTML = childData.name;
+		cell3.innerHTML = childData.date;
+		console.log(localStorage["ced"]);
+
+}
+    });
+});
+
+  </script>
 </body>
 <%- include ('_footer'); -%>
 

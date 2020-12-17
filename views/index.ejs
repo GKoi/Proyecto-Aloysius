@@ -18,10 +18,38 @@
               <br><br>
           </div>
          
-          <button onClick="location.href ='/mainUsuario'; login.value = 1;" class="shadow btn btn-lg btn-block text-white" type="submit" style="background-color:black; color:white">Iniciar Sesión</button>
+          <button onClick="check(form)" id="loginbto" class="shadow btn btn-lg btn-block text-white" type="submit" style="background-color:black; color:white">Iniciar Sesión</button>
           </form>
       </div>
     </div>
+	
+	
+	  <script>
+
+function check (form) {
+
+
+		console.log("error");
+
+    const ced = form.usr.value;
+    const pass = form.pwd.value;
+	var leadsRef = db.ref('Cuidadores');
+	leadsRef.on('value', function(snapshot) {
+		snapshot.forEach(function(childSnapshot) {
+		var childData = childSnapshot.val();
+		if(ced==childData.ced && pass ==childData.passw ){
+				localStorage["ced"]= childData.ced;
+				localStorage["cedPaciente"]= childData.paciente;
+			  window.open("/mainUsuario")
+    } 	else {
+    }
+
+    });
+});
+}
+
+
+  </script>
   </body>
   
 
