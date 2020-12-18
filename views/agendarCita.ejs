@@ -10,20 +10,7 @@
                     </div>
                 </div>
                 <div class="bg-white shadow p-3 mb-5" style="min-width: 1050px;">
-                    <div class="form-row">
-                        <div class="form-group col-12 col-md">
-                            <label> Área </label>
-                            <select class="form-control" id="area">
-                                <option value="0">Sin filtro</option>
-                            </select>
-                        </div>
-                        <div class="form-group col-12 col-md">
-                            <label> Doctor </label>
-                            <select class="form-control" id="doctor">
-                                <option value="0">Sin filtro</option>
-                            </select>
-                        </div>
-                    </div>                 
+                
                    <div class="table-responsive">
                     <table class="table table-striped">
                         <thead>
@@ -41,5 +28,33 @@
             </div>
         </div>
     </div>
+	
+	 <script>
+	var table = document.getElementById("componenttable");
+	var count = 0;
+	var leadsRef = db.ref('doctores');
+	leadsRef.on('value', function(snapshot) {
+    snapshot.forEach(function(childSnapshot) {
+      var childData = childSnapshot.val();
+		console.log(childData)
+		var row = table.insertRow(count);
+		var cell1 = row.insertCell(0);
+		var cell2 = row.insertCell(1);
+		var cell3 = row.insertCell(2);
+
+		cell1.innerHTML	=	childData.area;
+		cell2.innerHTML = childData.name;
+		cell3.innerHTML = childData.number;
+
+				count++;
+
+
+
+
+    });
+});
+
+
+  </script>
 </body>
 <%- include ('_footer'); -%>

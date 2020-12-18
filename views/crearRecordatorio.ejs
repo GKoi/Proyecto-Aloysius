@@ -19,12 +19,14 @@
                         <div class="form-group">
                           <label for="fechaRecordatorio">Fecha del recordatorio</label>
                           <input type="date" class="form-control" id="fechaRecordatorio">
+						  <input type="time" class="form-control" id="hourRecordatorio">
+
                         </div>
                         <div class="form-group">
                           <label for="descripcionRecordatorio">Descripción</label>
                           <input type="text" class="form-control" id="descripcionRecordatorio">
                         </div>
-                        <button type="submit" class="btn btn-primary"style="color:white; background-color:black; border-color: black;">Guardar</button>
+                        <button type="button" onClick = "crear(form)" class="btn btn-primary"style="color:white; background-color:black; border-color: black;">Guardar</button>
                       </form>
                 </div>
             </div>
@@ -33,8 +35,23 @@
 
 
   <script>
-      let d = new Date();
-      document.body.innerHTML = "<h1>Today's date is " + d + "</h1>"
+	function crear(form){
+
+	var date = form.fechaRecordatorio.value.split("-");
+	var hour = form.hourRecordatorio.value.split(":");
+		console.log(form.hourRecordatorio.value)
+
+
+	var alarmNumber = Math.floor(Math.random() * 10000 + 1)
+	  db.ref('recordatorios/'+alarmNumber).set({
+		     "alarmNumber" : alarmNumber,
+			"cedulaPaciente" : localStorage["cedPaciente"],
+			"date" : "["+date[0]+", "+date[1]+", "+date[2]+", "+hour[0]+", "+hour[1]+"]",
+			"idRecordatorio" : alarmNumber,
+			"name" : form.descripcionRecordatorio.value,
+			"state" : true
+  });
+  }
   </script>
 </body>
 <%- include ('_footer'); -%>
